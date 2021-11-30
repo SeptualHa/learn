@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="style.css">
+		<title>2048 2nd</title>
+	</head>
+	<body>
+		<div class="whole">
+			<div class="head">
+				<h1>2048</h1>
+				<div class="msgctn">
+					<div class="msg" id="scorectn">
+						<p class="msgname">SCORE</p>
+						<p class="msgctt" id="score">0</p>
+					</div>
+					<div class="msg" id="bestctn">
+						<p class="msgname">BEST</p>
+						<p class="msgctt" id="best">0</p>
+						<p class="newbest" id="new">new!!</p>
+					</div>
+				</div>
+				<div class="btn" id="btn">NEW GAME</div>
+			</div>
+			<div class="mainctn" id="mainctn">
+				<div class="main" id="main">
+					<div class="gridcell" id="gridcell-00"></div>
+					<div class="gridcell" id="gridcell-01"></div>
+					<div class="gridcell" id="gridcell-02"></div>
+					<div class="gridcell" id="gridcell-03"></div>
+					<div class="gridcell" id="gridcell-10"></div>
+					<div class="gridcell" id="gridcell-11"></div>
+					<div class="gridcell" id="gridcell-12"></div>
+					<div class="gridcell" id="gridcell-13"></div>
+					<div class="gridcell" id="gridcell-20"></div>
+					<div class="gridcell" id="gridcell-21"></div>
+					<div class="gridcell" id="gridcell-22"></div>
+					<div class="gridcell" id="gridcell-23"></div>
+					<div class="gridcell" id="gridcell-30"></div>
+					<div class="gridcell" id="gridcell-31"></div>
+					<div class="gridcell" id="gridcell-32"></div>
+					<div class="gridcell" id="gridcell-33"></div>
+				</div>
+				<div class="waitcover" id="waitcover"></div>
+			</div>
+		</div>
+
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js" defer></script>
+		<script src="support.js" defer></script>
+		<script src="animation.js" defer></script>
+		<script src="main.js" defer></script>
+	</body>
+</html>
