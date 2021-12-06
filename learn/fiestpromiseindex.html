@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+    <p>This is my page</p>
+
+    <script>
+    	let promise = fetch('coffee.jpg');
+    	promise.then((response) => {
+    		if(response.ok) {
+    			return response.blob();
+    		} else {
+    			throw new Error(`HTTP error! status: ${response.status}`);
+    		}
+    	}).then(myBlob => {
+    		let objurl = URL.createObjectURL(myBlob);
+    		let picture = document.createElement('img');
+    		picture.src = objurl;
+    		document.body.appendChild(picture);
+    	}).catch(err => {
+    		console.log(`There has been a problem with your fetch operation: ${err.message}`);
+    	})
+    </script>
+  </body>
+</html>
