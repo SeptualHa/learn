@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+    <p>This is my page</p>
+
+    <script>
+    	let promiseA =fetchAndDecode('coffee.jpg','blob');
+    	let promiseB =fetchAndDecode('tea.jpg','blob');
+    	let promiseC =fetchAndDecode('description.txt','text');
+    	Promise.all([promiseA,promiseB,promiseC]).then(values=>{
+    		console.log(values);
+    		let pic1 = document.createElement('img');
+    		let pic2 = document.createElement('img');
+    		let para = document.createElement('p');
+
+    		pic1.src = URL.createObjectURL(values[0]);
+    		pic2.src = URL.createObjectURL(values[1]);
+    		para.textContent = values[2];
+
+    		document.body.appendChild(pic1);
+    		document.body.appendChild(pic2);
+    		document.body.appendChild(para);
+    	});
+
+    	function fetchAndDecode(url,type) {
+    		return fetch(url).then(response=>{
+    			if(type == 'blob') {
+    				return response.blob();
+    			} else if(type == 'text') {
+    				return response.text();
+    			}
+    		}).catch(err=>{
+    			console.log(`我感觉怪怪的： ${err.message}`);
+    		});
+    	}
+
+    </script>
+  </body>
+</html>
